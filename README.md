@@ -12,13 +12,13 @@
 在`index.html`中的`<head>`标签中添加：
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@1.0.0/css/codeLineNum.css"></script>
+<script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum/css/codeLineNum.css"></script>
 ```
 
 在`index.html`中的`<body>`标签中添加：
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@1.0.0/script/codeLineNum.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum/script/codeLineNum.min.js"></script>
 ```
 
 # 配置
@@ -48,4 +48,6 @@
 ```
 
 
-
+```term
+triangle@LEARN:~$ test
+```
