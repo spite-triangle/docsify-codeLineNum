@@ -6,6 +6,10 @@
     --code-highlight-background: #dae5eb;
 }
 
+.markdown-section tr {
+    border-top: none !important;
+}
+
 .td-code {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
