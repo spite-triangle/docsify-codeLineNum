@@ -1,3 +1,4 @@
+
 ! function () {
     window.$docsify.plugins = [].concat(window.$docsify.plugins, function (hook, vm) {
 
@@ -66,11 +67,14 @@
 
             // 查找所有的 code，黑名单除外
             var pres = getElementByAttr('pre', 'data-lang');
-
+            console.log(pres);
             // 遍历所有的 code
             pres.forEach(function (pre, index) {
-                var html = '';
+                // 增加一个标记
+                pre.classList.add("pre-code-block");
 
+                var html = '';
+                
                 // 获取 code 标签
                 var code = getFirstSubelementByTag(pre, 'CODE');
                 // 代码拆分行
@@ -86,19 +90,27 @@
 
                     // 行高亮
                     line.addEventListener('mouseup', function (e) {
-                        // 是否为左键
-                        if (e.button != 0) {
+                        var curTime = new Date();
+
+                        // 左键点击，且不是长按
+                        if (e.button != 0 || (curTime - window.$docsify.lastTime) > 200) {
                             return;
                         }
-                        // 查看之前有没有被选中的
-                        if (window.$docsify.lastSelectedLine != null && this != window.$docsify.lastSelectedLine) {
-                            window.$docsify.lastSelectedLine.classList.remove("code-line-highlight");
-                        }
+
                         // 当前行被选中
                         this.classList.add("code-line-highlight");
                         window.$docsify.lastSelectedLine = this;
                     });
+                    
+                    line.addEventListener('mousedown', function(e){
+                        // 存一下当前时间
+                        window.$docsify.lastTime = new Date();
 
+                        // 查看之前有没有被选中的
+                        if (window.$docsify.lastSelectedLine != null) {
+                            window.$docsify.lastSelectedLine.classList.remove("code-line-highlight");
+                        }
+                    });
                 });
             });
         });

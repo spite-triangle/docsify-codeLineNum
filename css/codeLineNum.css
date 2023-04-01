@@ -52,6 +52,11 @@
     width: 100%;
 }
 
+.pre-code-block{
+    padding: 0 !important;
+    border-radius: 6px;
+}
+
 .code-block{
     padding: 0 !important;
 }
