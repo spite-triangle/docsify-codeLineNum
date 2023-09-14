@@ -12,7 +12,7 @@
 在`index.html`中的`<head>`标签中添加：
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@latest/css/codeLineNum.css"></script>
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/spite-triangle/docsify-codeLineNum@latest/css/codeLineNum.css" />
 ```
 
 在`index.html`中的`<body>`标签中添加：
